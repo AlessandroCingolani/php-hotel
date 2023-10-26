@@ -40,7 +40,6 @@ $hotels = [
 ];
 
 $option_select = $_GET['option'];
-var_dump($option_select);
 
 $hotel_filter_parking = [];
 
@@ -51,10 +50,6 @@ foreach($hotels as $filter){
     $hotel_filter_parking [] = $filter;
   }
 }  
-
-var_dump($hotel_filter_parking)
-
-
 
 
 ?>
