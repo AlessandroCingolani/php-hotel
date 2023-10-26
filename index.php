@@ -41,13 +41,13 @@ $hotels = [
 
 $option_select = $_GET['option'];
 
-$hotel_filter_parking = [];
+$hotel_filter = [];
 
 foreach($hotels as $filter){
   if($filter['parking'] == $option_select){
-    $hotel_filter_parking [] = $filter;
+    $hotel_filter [] = $filter;
   }elseif($option_select === 'all') {
-    $hotel_filter_parking [] = $filter;
+    $hotel_filter [] = $filter;
   }
 }  
 
@@ -70,7 +70,7 @@ foreach($hotels as $filter){
   <div class="row justify-content-center ">
     <div class="col-3">
       <form action="index.php" method="GET" >
-        <h3 class="mb-3">Filter for Parking</h3>  
+        <h3 class="mb-3 text-primary ">Filter for Parking</h3>  
         <select name="option" class="form-select mb-3" aria-label="Default select example">
           <option value="all">All</option>
           <option value="1">Parking</option>
@@ -82,7 +82,7 @@ foreach($hotels as $filter){
   </div>
 
   <!-- TABLE -->
-  <table class="table table-bordered mt-3">
+  <table class="table table-bordered mt-5">
     <thead>
       <tr>
         <?php foreach($hotels[0] as $key => $value): ?>
@@ -90,7 +90,7 @@ foreach($hotels as $filter){
         <?php endforeach; ?>
     </thead>
     <tbody>
-      <?php foreach($hotel_filter_parking as $hotel): ?>
+      <?php foreach($hotel_filter as $hotel): ?>
       <tr>
           <td><?php echo $hotel['name']?></td>
           <td><?php echo $hotel['description']?></td>  
