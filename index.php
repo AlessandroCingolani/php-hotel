@@ -1,7 +1,6 @@
 <?php 
 
 $hotels = [
-
     [
         'name' => 'Hotel Belvedere',
         'description' => 'Hotel Belvedere Descrizione',
@@ -53,8 +52,8 @@ $hotels = [
   <title>PHP Hotel</title>
 </head>
 <body>
-<div class="container">
-  <table class="table">
+<div class="container mt-5 ">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <?php foreach($hotels[0] as $key => $value): ?>
