@@ -39,7 +39,8 @@ $hotels = [
 
 ];
 
-
+$hotel_select = $_GET['option'];
+var_dump($hotel_select)
 ?>
 
 
@@ -53,7 +54,22 @@ $hotels = [
 </head>
 <body>
 <div class="container mt-5 ">
-  <table class="table table-bordered">
+  <!-- FORM GET -->
+  <div class="row justify-content-center ">
+    <div class="col-3">
+      <form action="index.php" method="GET" >
+        <h3 class="mb-3">Filter for Parking</h3>  
+        <select name="option" class="form-select mb-3" aria-label="Default select example">
+          <option selected>All</option>
+          <option value="parking">Parking</option>
+          <option value="no_parking">No Parking</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Invio</button>
+      </form>
+    </div>
+  </div>
+
+  <table class="table table-bordered mt-3">
     <thead>
       <tr>
         <?php foreach($hotels[0] as $key => $value): ?>
