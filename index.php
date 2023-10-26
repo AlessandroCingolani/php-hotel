@@ -67,7 +67,7 @@ $hotels = [
           <td scope="col">
             <?php echo $hotel['name']?> 
             <?php echo $hotel['description']?>
-            <?php echo $hotel['parking']?> 
+            <?php echo $hotel['parking'] ? 'YES' : 'NO' ?> 
             <?php echo $hotel['vote']?>
             <?php echo $hotel['distance_to_center']?>
           </td>
