@@ -47,7 +47,7 @@ $hotel_filter_parking = [];
 foreach($hotels as $filter){
   if($filter['parking'] == $option_select){
     $hotel_filter_parking [] = $filter;
-  }else {
+  }elseif($option_select === 'all') {
     $hotel_filter_parking [] = $filter;
   }
 }  
@@ -77,7 +77,7 @@ var_dump($hotel_filter_parking)
       <form action="index.php" method="GET" >
         <h3 class="mb-3">Filter for Parking</h3>  
         <select name="option" class="form-select mb-3" aria-label="Default select example">
-          <option selected>All</option>
+          <option value="all">All</option>
           <option value="1">Parking</option>
           <option value="0">No Parking</option>
         </select>
