@@ -58,32 +58,20 @@ $hotels = [
     <thead>
       <tr>
         <?php foreach($hotels[0] as $key => $value): ?>
-          <th scope="col"><?php echo $key?></th>
+          <th scope="col"><?php echo strtoupper($key)?></th>
         <?php endforeach; ?>
     </thead>
     <tbody>
       <?php foreach($hotels as $hotel): ?>
       <tr>
-          <td scope="col">
-            <?php echo $hotel['name']?> 
-            <?php echo $hotel['description']?>
-            <?php echo $hotel['parking'] ? 'YES' : 'NO' ?> 
-            <?php echo $hotel['vote']?>
-            <?php echo $hotel['distance_to_center']?>
-          </td>
+          <td><?php echo $hotel['name']?></td>
+          <td><?php echo $hotel['description']?></td>  
+          <td><?php echo $hotel['parking'] ? 'YES' : 'NO' ?></td>   
+          <td><?php echo $hotel['vote']?></td> 
+          <td><?php echo $hotel['distance_to_center']?></td>        
       </tr>
       <?php endforeach; ?>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+     
     </tbody>
   </table>
 
