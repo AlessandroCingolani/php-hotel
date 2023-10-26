@@ -39,8 +39,22 @@ $hotels = [
 
 ];
 
-$hotel_select = $_GET['option'];
-var_dump($hotel_select)
+$option_select = $_GET['option'];
+var_dump($option_select);
+
+$hotel_filter_parking = [];
+
+foreach($hotels as $filter){
+  if($filter['parking'] == $option_select){
+    $hotel_filter_parking [] = $filter;
+  }
+}  
+
+var_dump($hotel_filter_parking)
+
+
+
+
 ?>
 
 
@@ -53,6 +67,7 @@ var_dump($hotel_select)
   <title>PHP Hotel</title>
 </head>
 <body>
+
 <div class="container mt-5 ">
   <!-- FORM GET -->
   <div class="row justify-content-center ">
@@ -61,14 +76,15 @@ var_dump($hotel_select)
         <h3 class="mb-3">Filter for Parking</h3>  
         <select name="option" class="form-select mb-3" aria-label="Default select example">
           <option selected>All</option>
-          <option value="parking">Parking</option>
-          <option value="no_parking">No Parking</option>
+          <option value="true">Parking</option>
+          <option value="false">No Parking</option>
         </select>
         <button type="submit" class="btn btn-primary">Invio</button>
       </form>
     </div>
   </div>
 
+  <!-- TABLE -->
   <table class="table table-bordered mt-3">
     <thead>
       <tr>
